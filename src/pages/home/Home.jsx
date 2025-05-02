@@ -10,9 +10,8 @@ const Home = () => {
 
   const handleLogout = async () => {
     try {
-      // Token kontrolü
       const token = auth?.user?.token;
-      console.log("Logout token:", token); // Token'ı kontrol et
+      console.log("Logout token:", token);
 
       if (!token) {
         throw new Error('Oturum bilgisi bulunamadı');
@@ -32,11 +31,7 @@ const Home = () => {
         const errorData = await response.json();
         throw new Error(errorData.message || 'Çıkış işlemi başarısız');
       }
-
-      // Redux state'i temizle
       dispatch(signOut());
-      
-      // Login sayfasına yönlendir
       navigate('/');
     } catch (error) {
       console.error("Logout error:", error);
