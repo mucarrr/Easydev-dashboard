@@ -143,7 +143,6 @@ const Login = () => {
           <PrimaryButton type="button" onClick={handleSignIn}>Sign In</PrimaryButton>
           <SecondaryButton>Create Account</SecondaryButton>
           {auth.error && <p style={{ color: "red" }}>{auth.error}</p>}
-          {auth.user && <p style={{ color: "green" }}>Welcome, {auth.user.username}</p>}
         </Form>
         <BottomTitle>Or Easily Using</BottomTitle>
         <SocialArea>
